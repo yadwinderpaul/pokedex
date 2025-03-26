@@ -1,44 +1,50 @@
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router';
+import { Evolution } from '../../../types';
 import { getPokemonDetail } from '../../../utils/api';
-import PokemonType from './PokemonType';
-import './PokemonCard.scss';
+import './EvolutionInfo.scss';
+import PokemonType from '../../../components/PokemonType';
 
 interface Props {
-  pokemonName: string;
+  currentPokemon: string;
+  evolution: Evolution;
 }
 
-function PokemonCard({ pokemonName }: Props) {
+function EvolutionInfo({ evolution, currentPokemon }: Props) {
   const {
     data: pokemonDetail,
     isLoading,
     isFetched,
   } = useQuery({
-    queryKey: ['pokemonDetail', pokemonName],
-    queryFn: async () => getPokemonDetail(pokemonName),
+    queryKey: ['pokemonDetail', evolution.species.name],
+    queryFn: async () => getPokemonDetail(evolution.species.name),
   });
+
+  const isCuurentPokemon = currentPokemon === evolution.species.name;
 
   return (
     <>
       {isLoading && <p>Loading...</p>}
       {isFetched && pokemonDetail && (
-        <Link className="pokemon-card" to={`/${pokemonDetail.name}`}>
+        <div className={`evolution-info ${isCuurentPokemon ? 'current-pokemon' : ''}`}>
           <img
             src={pokemonDetail.sprites.other['official-artwork'].front_default}
             alt={pokemonDetail.name}
           />
           <div className="pokemon-details">
-            <h1>{pokemonDetail.name}</h1>
+            <div className="pokemon-id-name">
+              <span>#{pokemonDetail.id}</span><span className="pokemon-name">{pokemonDetail.name}</span>
+            </div>
             <div className="pokemon-types">
               {pokemonDetail.types.map((type) => (
                 <PokemonType key={type.type.name} typeName={type.type.name} />
               ))}
             </div>
           </div>
-        </Link>
+        </div>
       )}
     </>
   );
-};
 
-export default PokemonCard;
+}
+
+export default EvolutionInfo;

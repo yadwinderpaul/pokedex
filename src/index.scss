@@ -3,6 +3,8 @@
 :root {
   --font-family: 'Tiny5', Helvetica, Arial, sans-serif;
   --text-primary: #000000;
+  --gap: 4px;
+  --double-line-border: 8px double #000000;
 
   font-family: var(--font-family);
   line-height: 1.5;
@@ -12,4 +14,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: #313131;
+  font-family: var(--font-family);
+  color: white;
+  padding: calc(var(--gap)) calc(var(--gap) * 2);;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #6c6c6c;
+    cursor: not-allowed;
+  }
+}
+
+.card {
+  padding: calc(var(--gap)) calc(var(--gap) * 5);
+
+  border: var(--double-line-border);
+  border-radius: 8px;
 }

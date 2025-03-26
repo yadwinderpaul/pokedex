@@ -1,0 +1,43 @@
+.evolution-info {
+    display: flex;
+    gap: calc(var(--gap) * 2);
+    flex-direction: row;
+    align-items: center;
+
+    border: 2px dashed #000000;
+    border-radius: 4px;
+    padding: calc(var(--gap)) calc(var(--gap) * 3);
+
+    &.current-pokemon {
+        border: 2px solid #000000;
+        background-color: #f7f7f7;
+    }
+
+    img {
+        height: 60px;
+    }
+
+    .pokemon-details {
+        display: flex;
+        gap: var(--gap);
+        flex-direction: column;
+
+        .pokemon-id-name {
+            text-transform: capitalize;
+            font-size: 18px;
+
+            span {
+                display: inline-block;
+            }
+
+            .pokemon-name {
+                margin-left: var(--gap);
+            }
+        }
+
+        .pokemon-types {
+            display: flex;
+            gap: calc(var(--gap) * 2);
+        }
+    }
+}

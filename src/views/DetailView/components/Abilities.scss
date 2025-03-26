@@ -1,0 +1,16 @@
+.abilities {
+    border: var(--double-line-border);
+    border-radius: 8px;
+    padding: calc(var(--gap)) calc(var(--gap) * 5);
+
+    ul {
+        margin: var(--gap);
+        padding-left: calc(var(--gap) * 2);
+
+        li {
+            text-transform: capitalize;
+            list-style: disclosure-closed;
+            list-style-position: inside;
+        }
+    }
+}

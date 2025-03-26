@@ -1,19 +1,10 @@
 .pokemon-card {
-    text-decoration: none;
     color: var(--text-primary);
 
     display: flex;
-    gap: 16px;
+    gap: calc(var(--gap) * 2);
     flex-direction: row;
     align-items: center;
-    padding: 4px 20px;
-
-    border: 8px double #000000;
-    border-radius: 8px;
-
-    + .pokemon-card {
-        margin-top: 16px;
-    }
 
     img {
         height: 100px;
@@ -21,20 +12,21 @@
 
     .pokemon-details {
         display: flex;
-        gap: 8px;
+        gap: calc(var(--gap) * 2);
         flex-direction: column;
 
-        h1 {
-            display: inline;
+        h1, h2 {
+            display: inline-block;
             text-transform: capitalize;
 
             font-size: 22px;
-            margin: 0;
+            line-height: 1.2;
+            margin: 0 var(--gap);
         }
 
         .pokemon-types {
             display: flex;
-            gap: 8px;
+            gap: calc(var(--gap) * 2);
         }
     }
 }

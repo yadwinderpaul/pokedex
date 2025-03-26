@@ -3,3 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.nav {
+  margin-bottom: calc(var(--gap) * 2);
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+}

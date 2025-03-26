@@ -1,4 +1,4 @@
-export interface ListPokemon {
+export interface PokemonInfo {
   id: number;
   name: string;
 }
@@ -7,7 +7,7 @@ export interface ListAPIResult {
   count: number;
   previous: string | null;
   next: string | null;
-  results: ListPokemon[];
+  results: PokemonInfo[];
 }
 
 interface Sprites {
@@ -26,9 +26,48 @@ interface Type {
   }
 };
 
-export interface DetailPokemon {
+export interface Ability {
+  ability: {
+    name: string;
+    url: URL;
+  }
+};
+
+export interface SpeciesInfo {
+  name: string;
+  url: URL;
+};
+
+export interface Stat {
+  base_stat: number;
+  stat: {
+    name: string,
+  }
+}
+
+export interface PokemonDetail {
   id: number;
   name: string;
+  stats: Stat[];
   sprites: Sprites;
   types: Type[];
+  abilities: Ability[];
+  species: SpeciesInfo;
+}
+
+export interface SpeciesDetail {
+  name: string;
+  evolution_chain: {
+    url: URL;
+  };
+}
+
+export interface Evolution {
+  species: SpeciesInfo;
+  evolves_to: Evolution[];
+}
+
+export interface EvolutionDetail {
+  id: number;
+  chain: Evolution;
 }

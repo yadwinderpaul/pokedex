@@ -1,6 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router';
+import Abilities from './components/Abilities';
+import Evolutions from './components/Evolutions';
 import { getPokemonDetail } from '../../utils/api';
+import PokemonCard from '../../components/PokemonCard';
+import PokemonStats from './components/PokemonStats';
+import './index.scss';
+
 
 function DetailView() {
   const { pokemonName } = useParams() as { pokemonName: string };
@@ -15,11 +21,13 @@ function DetailView() {
 
   return (
     <div>
-      <h1>DetailView</h1>
       {isLoading && <p>Loading...</p>}
       {isFetched && pokemonDetail && (
-        <div>
-          <h2>{pokemonDetail.name}</h2>
+        <div className="detail-view">
+          <PokemonCard pokemonDetail={pokemonDetail} />
+          <PokemonStats pokemonDetail={pokemonDetail} />
+          <Abilities abilities={pokemonDetail.abilities}/>
+          <Evolutions pokemonName={pokemonDetail.name} species={pokemonDetail.species} />
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
-import PokemonCard from './components/PokemonCard';
+import ListPokemonCard from './components/ListPokemonCard';
 import Pagination from './components/Pagination';
 import { getPokemons } from '../../utils/api';
 import './index.scss';
@@ -30,7 +30,7 @@ function ListView() {
         <>
           <div>
             {data.results.map((pokemon) => (
-              <PokemonCard key={pokemon.name} pokemonName={pokemon.name} />
+              <ListPokemonCard key={pokemon.name} pokemonName={pokemon.name} />
             ))}
           </div>
           <Pagination previous={data.previous} next={data.next} />
