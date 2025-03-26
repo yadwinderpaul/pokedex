@@ -1,0 +1,40 @@
+.pokemon-card {
+    text-decoration: none;
+    color: var(--text-primary);
+
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 20px;
+
+    border: 8px double #000000;
+    border-radius: 8px;
+
+    + .pokemon-card {
+        margin-top: 16px;
+    }
+
+    img {
+        height: 100px;
+    }
+
+    .pokemon-details {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+
+        h1 {
+            display: inline;
+            text-transform: capitalize;
+
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .pokemon-types {
+            display: flex;
+            gap: 8px;
+        }
+    }
+}
