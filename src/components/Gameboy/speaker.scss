@@ -1,0 +1,65 @@
+.speaker {
+    grid-area: speaker;
+    justify-self: center;
+    align-self: center;
+
+    width: 80px;
+    height: 80px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        ". hole12 hole13 ."
+        "hole21 hole22 hole23 hole24"
+        "hole31 hole32 hole33 hole34"
+        ". hole42 hole43 .";
+    
+    .hole {
+        background-color: #4d4d4d;
+        border-radius: 50%;
+        height: 8px;
+        width: 8px;
+    
+        box-shadow: inset 1px 1px 2px 0 #000;
+    }
+}
+
+#hole12 {
+    grid-area: hole12;
+}
+#hole13 {
+    grid-area: hole13;
+}
+#hole21 {
+    grid-area: hole21;
+}
+#hole22 {
+    grid-area: hole22;
+}
+#hole23 {
+    grid-area: hole23;
+}
+#hole24 {
+    grid-area: hole24;
+}
+#hole31 {
+    grid-area: hole31;
+}
+#hole32 {
+    grid-area: hole32;
+}
+#hole33 {
+    grid-area: hole33;
+}
+#hole34 {
+    grid-area: hole34;
+}
+#hole42 {
+    grid-area: hole42;
+}
+#hole43 {
+    grid-area: hole43;
+}

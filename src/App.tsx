@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes, useLocation } from 'react-router';
 import ListView from './views/ListView';
 import DetailView from './views/DetailView';
-import Container from './components/Container';
+import Gameboy from './components/Gameboy';
 import './App.scss';
 
 function App() {
@@ -9,9 +9,9 @@ function App() {
   console.log('location', location);
 
   return (
-    <Container>
+    <Gameboy>
       <div className="nav">
-        <NavLink to="/">
+        <NavLink to="/" tabIndex={-1}>
           <button>{location.pathname !== '/' ? '< Back' : 'Home'}  </button>
         </NavLink>
       </div>
@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<ListView />} />
         <Route path="/:pokemonName" element={<DetailView />} />
       </Routes>
-    </Container>
+    </Gameboy>
   );
 }
 

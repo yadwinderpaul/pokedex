@@ -1,0 +1,89 @@
+.dpad {
+    grid-area: dpad;
+    justify-self: center;
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        ". up ."
+        "left center right"
+        ". down .";
+
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+
+    &:active {
+        filter: drop-shadow(0 0 0  #000);
+    }
+
+    > button {
+        height: 40px;
+        aspect-ratio: 1;
+    
+        background-color: #171717;
+        text-shadow: -0.5px -0.5px rgba(0, 0, 0, 0.5), 0.5px 0.5px rgba(255, 255, 255, 0.5);
+    
+        color: #4d4d4d;
+        border: none;
+        font-size: 25px;
+    
+        cursor: pointer;
+
+        &:active {
+            text-shadow: 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+
+    > button.center {
+        height: 42px;
+        aspect-ratio: 1;
+    
+        background-color: #171717;
+    
+        border: none;
+    
+        cursor: pointer;
+    }
+
+    .up {
+        border-radius: 4px 4px 0 0;
+        grid-area: up;
+        
+        box-shadow: 0 0 0 2px #000,
+            4px 4px 10px rgba(0, 0, 0, 0.5),
+            inset 1.5px 1.5px 1px rgba(255, 255, 255, 0.5),
+            inset -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
+    }
+    
+    .right {
+        border-radius: 0 4px 4px 0;
+        grid-area: right;
+        
+        box-shadow: 0 0 0 2px #000,
+            4px 4px 10px rgba(0, 0, 0, 0.5),
+            inset 0 0.5px 0.5px rgba(255, 255, 255, 0.5),
+            inset -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
+    }
+    .down {
+        border-radius: 0 0 4px 4px;
+        grid-area: down;
+        
+        box-shadow: 0 0 0 2px #000,
+            4px 4px 10px rgba(0, 0, 0, 0.5),
+            inset 1.5px 0 0.5px rgba(255, 255, 255, 0.5),
+            inset -1.5px 0 1px rgba(0, 0, 0, 0.5);
+    }
+    .left {
+        border-radius: 4px 0 0 4px;
+        grid-area: left;
+    
+        box-shadow: 0 0 0 2px #000,
+            4px 4px 10px rgba(0, 0, 0, 0.5),
+            inset 1.5px 1.5px 1px rgba(255, 255, 255, 0.5),
+            inset -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
+    }
+    .center {
+        grid-area: center;
+    }    
+}

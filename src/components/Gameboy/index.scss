@@ -1,0 +1,81 @@
+@import './speaker.scss';
+@import './dpad.scss';
+@import './actions.scss';
+
+.gameboy {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-color: red;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.09) 0%,
+        rgba(128, 128, 128, 0) 50%,
+        rgba(0, 0, 0, 0.29) 100%
+    );
+
+    border-radius: 50px;
+    border: 4px solid #8a0000;
+
+    display: grid;
+    column-gap: 20px;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+        "speaker screen    ."
+        "speaker screen actions"
+        "dpad    screen actions"
+        "dpad    screen    ."
+        "  .     screen    ."
+        "  .     screen    .";
+}
+
+@media screen and (orientation: landscape) {
+    .gameboy {
+        max-width: 1000px;
+        max-height: 500px;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .gameboy {
+        grid-template-rows: minmax(0, 3fr) 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) 1fr 1fr;
+        grid-template-areas:
+            "screen screen  screen"
+            " dpad    .     actions"
+            "   .   speaker    .";
+    }
+}
+
+.screen-container {
+    grid-area: screen;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 0;
+
+    .screen {
+        width: 100%;
+        height: 100%;
+    
+        background-color: #eee;
+        border-radius: 20px;
+        box-shadow: inset 2px 2px 3px 0 #333;
+    
+        background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.07) 0%, rgba(128, 128, 128, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    
+        padding: calc(var(--gap) * 4);
+        overflow-y: scroll;
+    }
+    
+}
+
+@media screen and (orientation: portrait) {
+    .screen-container {
+        padding: 40px;
+    }
+}
