@@ -1,6 +1,6 @@
-@import './speaker.scss';
-@import './dpad.scss';
-@import './actions.scss';
+@forward './speaker.scss';
+@forward './dpad.scss';
+@forward './actions.scss';
 
 .gameboy {
     width: 100%;
