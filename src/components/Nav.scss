@@ -1,0 +1,17 @@
+.nav {
+    margin-bottom: calc(var(--gap) * 2);
+    
+    a {
+        color: var(--text-primary);
+        text-decoration: none;
+
+        &.active {
+            button {
+                color: #000;
+                background-color: transparent;
+                border: 2px solid #000;
+                padding: calc(var(--gap) - 2px) calc(var(--gap) * 2 - 2px);
+            }
+        }
+    }
+}

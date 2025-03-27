@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Evolution, SpeciesInfo } from '../../../types';
 import { getEvolutionsFromSpecies } from '../../../utils/api';
 import EvolutionInfo from './EvolutionInfo';
+import Loader from '../../../components/Loader';
 import './Evolutions.scss';
 
 interface Props {
@@ -38,7 +39,7 @@ function Evolutions({ pokemonName, species }: Props) {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isFetched && evolutions && (
         <div className="evolutions">
           <h2>Evolutions</h2>

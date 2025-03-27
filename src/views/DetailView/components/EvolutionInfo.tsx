@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { Evolution } from '../../../types';
 import { getPokemonDetail } from '../../../utils/api';
-import './EvolutionInfo.scss';
 import PokemonType from '../../../components/PokemonType';
+import Loader from '../../../components/Loader';
+import './EvolutionInfo.scss';
 
 interface Props {
   currentPokemon: string;
@@ -23,7 +24,7 @@ function EvolutionInfo({ evolution, currentPokemon }: Props) {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isFetched && pokemonDetail && (
         <div className={`evolution-info ${isCuurentPokemon ? 'current-pokemon' : ''}`}>
           <img

@@ -5,12 +5,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.nav {
-  margin-bottom: calc(var(--gap) * 2);
-
-  a {
-    color: var(--text-primary);
-    text-decoration: none;
-  }
-}

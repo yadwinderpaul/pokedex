@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router';
 import { getPokemonDetail } from '../../../utils/api';
 import PokemonCard from '../../../components/PokemonCard';
+import Loader from '../../../components/Loader';
 import './ListPokemonCard.scss';
 
 interface Props {
@@ -20,7 +21,7 @@ function ListPokemonCard({ pokemonName }: Props) {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isFetched && pokemonDetail && (
         <Link className="list-pokemon-card" to={`/${pokemonDetail.name}`}>
           <PokemonCard pokemonDetail={pokemonDetail} />

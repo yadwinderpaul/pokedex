@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import ListPokemonCard from './components/ListPokemonCard';
 import Pagination from './components/Pagination';
 import { getPokemons } from '../../utils/api';
+import Loader from '../../components/Loader';
 import './index.scss';
 
 function ListView() {
@@ -25,7 +26,7 @@ function ListView() {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isFetched && data && (
         <>
           <div>

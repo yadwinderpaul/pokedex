@@ -5,8 +5,8 @@ import Evolutions from './components/Evolutions';
 import { getPokemonDetail } from '../../utils/api';
 import PokemonCard from '../../components/PokemonCard';
 import PokemonStats from './components/PokemonStats';
+import Loader from '../../components/Loader';
 import './index.scss';
-
 
 function DetailView() {
   const { pokemonName } = useParams() as { pokemonName: string };
@@ -21,7 +21,7 @@ function DetailView() {
 
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isFetched && pokemonDetail && (
         <div className="detail-view">
           <PokemonCard pokemonDetail={pokemonDetail} />

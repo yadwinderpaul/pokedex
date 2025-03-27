@@ -27,7 +27,7 @@
         "speaker screen actions"
         "dpad    screen actions"
         "dpad    screen    ."
-        "  .     screen    ."
+        "  .     screen  logo"
         "  .     screen    .";
 }
 
@@ -45,7 +45,7 @@
         grid-template-areas:
             "screen screen  screen"
             " dpad    .     actions"
-            "   .   speaker    .";
+            "   .   speaker   logo";
     }
 }
 
@@ -77,5 +77,19 @@
 @media screen and (orientation: portrait) {
     .screen-container {
         padding: 40px;
+    }
+}
+
+.logo {
+    grid-area: logo;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 50%;
+        aspect-ratio: 1;
+        mix-blend-mode: color-dodge;
     }
 }
