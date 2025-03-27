@@ -13,27 +13,29 @@ test('expect a next pagination button', async ({ page }) => {
 
 test('expect pagination to work', async ({ page }) => {
   await page.goto('/');
-  await page.waitForLoadState('networkidle');
+  await page.waitForSelector('.list-view.offset-0');
 
-  test.step('click on the next button', async () => {
+  await test.step('click next', async () => {
+    await page.waitForSelector('.pagination');
     await page.getByTitle('Next').scrollIntoViewIfNeeded();
-    await page.getByTitle('Next').locator('..').click();
+    await page.getByTitle('Next').click();
   });
 
-  test.step('expect next page first pokemon to be Metapod', async () => {
-    await page.waitForLoadState('networkidle');
-    const firstPokemonName = page.locator('.list-pokemon-card .pokemon-details h1').first();
-    await expect(firstPokemonName).toContainText(/metapod/g);
+  const firstPokemonLocator = page.locator('.pokemon-card .pokemon-details h1').first();
+
+  await test.step('expect metapod in next page', async () => {
+    await page.waitForSelector('.list-view.offset-10');
+    await expect(firstPokemonLocator).toContainText(/metapod/g);
   });
 
-  test.step('click on the previous button', async () => {
+  await test.step('click previous', async () => {
+    await page.waitForSelector('.pagination');
     await page.getByTitle('Previous').scrollIntoViewIfNeeded();
     await page.getByTitle('Previous').click();
   });
 
-  test.step('expect previous page first pokemon to be Bulbasaur', async () => {
-    await page.waitForLoadState('networkidle');
-    const firstPokemonName = page.locator('.list-pokemon-card .pokemon-details h1').first();
-    await expect(firstPokemonName).toContainText(/bulbasaur/g);
+  await test.step('expect bulbasaur in previous page', async () => {
+    await page.waitForSelector('.list-view.offset-0');
+    await expect(firstPokemonLocator).toContainText(/bulbasaur/g);
   });
 });

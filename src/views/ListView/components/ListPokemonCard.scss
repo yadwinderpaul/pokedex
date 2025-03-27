@@ -1,8 +1,0 @@
-.list-pokemon-card {
-    display: block;
-    text-decoration: none;
-
-    + .list-pokemon-card {
-        margin-top: calc(var(--gap) * 2);
-    }
-}
