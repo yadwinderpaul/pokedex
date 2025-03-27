@@ -17,16 +17,14 @@ function ListView() {
     <>
       {!isLoaded && <Loader />}
       {isLoaded && (
-        <>
-          <div className={`list-view offset-${offset}`}>
-            {pokemonDetailList.map((pokemonDetail) => (
-              <Link className="list-pokemon-card" to={`/${pokemonDetail.name}`} key={pokemonDetail.name}>
-                <PokemonCard pokemonDetail={pokemonDetail} />
-              </Link>
-            ))}
-          </div>
+        <div className={`list-view offset-${offset}`}>
+          {pokemonDetailList.map((pokemonDetail) => (
+            <Link className="list-pokemon-card" to={`/${pokemonDetail.name}`} key={pokemonDetail.name}>
+              <PokemonCard pokemonDetail={pokemonDetail} />
+            </Link>
+          ))}
           <Pagination previous={pokemonList.previous} next={pokemonList.next} />
-        </>
+        </div>
       )}
     </>
   );

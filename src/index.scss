@@ -5,6 +5,7 @@
   --text-primary: #000000;
   --gap: 4px;
   --double-line-border: 8px double #000000;
+  --var-small-width: 500;
 
   font-family: var(--font-family);
   line-height: 1.5;
@@ -16,6 +17,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 16px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
 body {
   height: calc(100vh - 10px);
   margin: 0;
@@ -24,20 +33,25 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #000;
+  font-size: 1rem;
 }
 
 h1, h2 {
-  font-size: 22px;
+  font-size: 1.4rem;
   margin: 0;
 }
 
-button {
+.button {
   border: none;
   background-color: #313131;
   font-family: var(--font-family);
   color: white;
-  padding: calc(var(--gap)) calc(var(--gap) * 2);
+  padding: calc(var(--gap) * 2) calc(var(--gap) * 4);
   cursor: pointer;
+
+  @media screen and (max-width: 500px) {
+    padding: calc(var(--gap) * 1) calc(var(--gap) * 2);
+}
 
   &:disabled {
     background-color: #6c6c6c;
@@ -50,4 +64,8 @@ button {
 
   border: var(--double-line-border);
   border-radius: 8px;
+
+  @media screen and (max-width: 500px) {
+    padding: calc(var(--gap)) calc(var(--gap) * 2);
+  }
 }

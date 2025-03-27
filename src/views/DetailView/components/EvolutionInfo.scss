@@ -15,6 +15,9 @@
 
     img {
         height: 60px;
+        @media screen and (max-width: 500px) {
+            height: 30px;
+        }
     }
 
     .pokemon-details {
@@ -22,9 +25,13 @@
         gap: var(--gap);
         flex-direction: column;
 
+        @media screen and (max-width: 500px) {
+            gap: 0;
+        }
+
         .pokemon-id-name {
             text-transform: capitalize;
-            font-size: 18px;
+            font-size: 1.2rem;
 
             span {
                 display: inline-block;

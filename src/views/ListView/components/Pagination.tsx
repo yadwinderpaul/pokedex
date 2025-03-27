@@ -11,14 +11,14 @@ function Pagination({ previous, next }: Props) {
     <div className="pagination">
       {previous ? (
         <Link to={`/?offset=${extractOffset(previous)}`} tabIndex={-1}>
-          <button type='button' title='Previous'>Previous</button>
+          <button className='button' type='button' title='Previous'>Previous</button>
         </Link>
-      ) : <button type='button' title='Previous' disabled>Previous</button>}
+      ) : <button className='button' type='button' title='Previous' disabled>Previous</button>}
       {next ? (
         <Link to={`/?offset=${extractOffset(next)}`} tabIndex={-1}>
-          <button type='button' title='Next'>Next</button>
+          <button className='button' type='button' title='Next'>Next</button>
         </Link>
-      ) : <button type='button' title='Next' disabled>Next</button>}
+      ) : <button className='button' type='button' title='Next' disabled>Next</button>}
     </div>
   );
 }

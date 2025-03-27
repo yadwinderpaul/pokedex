@@ -16,6 +16,15 @@
         "hole21 hole22 hole23 hole24"
         "hole31 hole32 hole33 hole34"
         ". hole42 hole43 .";
+
+    @media screen and (max-width: 500px) and (orientation: portrait) {
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-height: 500px) and (orientation: landscape) {
+        width: 50px;
+        height: 50px;
+    }
     
     .hole {
         background-color: #4d4d4d;
@@ -24,6 +33,15 @@
         width: 8px;
     
         box-shadow: inset 1px 1px 2px 0 #000;
+
+        @media screen and (max-width: 500px) and (orientation: portrait) {
+            height: 4px;
+            width: 4px;
+        }
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            height: 4px;
+            width: 4px;
+        }
     }
 }
 

@@ -26,9 +26,18 @@
     
         color: #4d4d4d;
         border: none;
-        font-size: 25px;
+        font-size: 1.6rem;
     
         cursor: pointer;
+
+        @media screen and (max-width: 500px) and (orientation: portrait) {
+            height: 30px;
+            font-size: 1.2rem;
+        }
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            height: 30px;
+            font-size: 1.2rem;
+        }
 
         &:active {
             text-shadow: 0 0 rgba(0, 0, 0, 0);
@@ -44,6 +53,13 @@
         border: none;
     
         cursor: pointer;
+
+        @media screen and (max-width: 500px) and (orientation: portrait) {
+            height: 32px;
+        }
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            height: 32px;
+        }
     }
 
     .up {

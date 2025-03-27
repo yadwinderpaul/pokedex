@@ -8,16 +8,18 @@ function Nav() {
     window.history.back();
   };
 
+  const isHome = location.pathname === '/' && location.search === '';
+
   return (
     <div className="nav">
-      {location.pathname === '/' && (
+      {isHome && (
         <Link to="/" tabIndex={-1} className="active">
-          <button>Home</button>
+          <button className='button'>Home</button>
         </Link>
       )}
-      {location.pathname !== '/' && (
+      {!isHome && (
         <a onClick={handleBackClick} tabIndex={-1}>
-          <button>{'< Back'}</button>
+          <button className='button'>{'< Back'}</button>
         </a>
       )}
     </div>

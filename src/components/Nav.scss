@@ -1,5 +1,9 @@
 .nav {
-    margin-bottom: calc(var(--gap) * 2);
+    padding: calc(var(--gap) * 4) calc(var(--gap) * 4) 0;
+
+    @media screen and (max-width: 500px) {
+        padding: calc(var(--gap) * 4) calc(var(--gap) * 2) 0;
+    }
     
     a {
         color: var(--text-primary);
@@ -10,7 +14,10 @@
                 color: #000;
                 background-color: transparent;
                 border: 2px solid #000;
-                padding: calc(var(--gap) - 2px) calc(var(--gap) * 2 - 2px);
+                padding: calc(var(--gap) * 2 - 2px) calc(var(--gap) * 4 - 2px);
+                @media screen and (max-width: 500px) {
+                    padding: calc(var(--gap) * 1 - 2px) calc(var(--gap) * 2 - 2px);
+                }
             }
         }
     }
