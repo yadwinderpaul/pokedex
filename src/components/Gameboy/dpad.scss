@@ -19,12 +19,9 @@
 
     > button {
         height: 40px;
-        aspect-ratio: 1;
+        width: 40px;
     
         background-color: #171717;
-        text-shadow: -0.5px -0.5px rgba(0, 0, 0, 0.5), 0.5px 0.5px rgba(255, 255, 255, 0.5);
-    
-        color: #4d4d4d;
         border: none;
         font-size: 1.6rem;
     
@@ -32,21 +29,49 @@
 
         @media screen and (max-width: 500px) and (orientation: portrait) {
             height: 30px;
+            width: 30px;
             font-size: 1.2rem;
         }
         @media screen and (max-height: 500px) and (orientation: landscape) {
             height: 30px;
+            width: 30px;
             font-size: 1.2rem;
         }
 
+        .arrow {
+            height: 100%;
+            width: 100%;
+            filter: drop-shadow(-1px -1px rgba(0, 0, 0, 0.5))
+            drop-shadow(1px 1px rgba(255, 255, 255, 0.5));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            height: 20px;
+            width: 20px;
+            filter: brightness(2) contrast(0.5);
+            @media screen and (max-width: 500px) and (orientation: portrait) {
+                height: 12px;
+                width: 12px;
+            }
+            @media screen and (max-height: 500px) and (orientation: landscape) {
+                height: 12px;
+                width: 12px;
+            }
+        }
+
         &:active {
-            text-shadow: 0 0 rgba(0, 0, 0, 0);
+            .arrow {
+                filter: drop-shadow(0 0 rgba(0, 0, 0, 0));
+            }
         }
     }
 
     > button.center {
         height: 42px;
-        aspect-ratio: 1;
+        width: 42px;
     
         background-color: #171717;
     
@@ -56,16 +81,21 @@
 
         @media screen and (max-width: 500px) and (orientation: portrait) {
             height: 32px;
+            width: 32px;
         }
         @media screen and (max-height: 500px) and (orientation: landscape) {
             height: 32px;
+            width: 32px;
         }
     }
 
     .up {
+        img {
+            transform: rotate(-90deg);
+        }
         border-radius: 4px 4px 0 0;
         grid-area: up;
-        
+
         box-shadow: 0 0 0 2px #000,
             4px 4px 10px rgba(0, 0, 0, 0.5),
             inset 1.5px 1.5px 1px rgba(255, 255, 255, 0.5),
@@ -73,6 +103,9 @@
     }
     
     .right {
+        img {
+            transform: rotate(0deg);
+        }
         border-radius: 0 4px 4px 0;
         grid-area: right;
         
@@ -82,6 +115,9 @@
             inset -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
     }
     .down {
+        img {
+            transform: rotate(90deg);
+        }
         border-radius: 0 0 4px 4px;
         grid-area: down;
         
@@ -91,6 +127,9 @@
             inset -1.5px 0 1px rgba(0, 0, 0, 0.5);
     }
     .left {
+        img {
+            transform: rotate(180deg);
+        }
         border-radius: 4px 0 0 4px;
         grid-area: left;
     

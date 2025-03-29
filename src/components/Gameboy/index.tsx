@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import pokeballLogo from '/pokeball.svg';
+import rightArrow from './assets/right.png';
 import './index.scss';
 
 interface Props {
@@ -35,10 +36,26 @@ function Dpad(props: {
   return (
     <div className="dpad">
       <button tabIndex={-1} className="center"></button>
-      <button tabIndex={-1} className="up" onClick={props.onUpClick}>▲</button>
-      <button tabIndex={-1} className="down" onClick={props.onDownClick}>▼</button>
-      <button tabIndex={-1} className="left" onClick={props.onLeftClick}>◀</button>
-      <button tabIndex={-1} className="right" onClick={props.onRightClick}>▶</button>
+      <button tabIndex={-1} className="up" onClick={props.onUpClick}>
+        <div className="arrow">
+          <img src={rightArrow} alt="Right Arrow" />
+        </div>
+      </button>
+      <button tabIndex={-1} className="down" onClick={props.onDownClick}>
+        <div className="arrow">
+          <img src={rightArrow} alt="Right Arrow" />
+        </div>
+      </button>
+      <button tabIndex={-1} className="left" onClick={props.onLeftClick}>
+        <div className="arrow">
+          <img src={rightArrow} alt="Right Arrow" />
+        </div>
+      </button>
+      <button tabIndex={-1} className="right" onClick={props.onRightClick}>
+        <div className="arrow">
+          <img src={rightArrow} alt="Right Arrow" />
+        </div>
+      </button>
     </div>
   );
 }

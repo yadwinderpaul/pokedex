@@ -9,7 +9,7 @@
 
     > button {
         height: 40px;
-        aspect-ratio: 1;
+        width: 40px;
     
         font-family: Arial, Helvetica, sans-serif;
     
@@ -26,10 +26,12 @@
 
         @media screen and (max-width: 500px) and (orientation: portrait) {
             height: 30px;
+            width: 30px;
             font-size: 1.2rem;
         }
         @media screen and (max-height: 500px) and (orientation: landscape) {
             height: 30px;
+            width: 30px;
             font-size: 1.2rem;
         }
 
